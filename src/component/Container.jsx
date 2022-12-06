@@ -24,13 +24,10 @@ export default function UserDetails() {
   }, [setUserDetail]);
 
   return (
-    <div className="flex max-h-screen overflow-hidden relative px-10 gap-8 py-5">
+    <div className="flex max-h-screen relative px-3 sm:px-10 sm: gap-8 py-5">
       {/* Left panel info */}
       <SideBar userDetail={userDetail} />
-      <div
-        style={{ width: "calc(100% - 270px)" }}
-        className="relative ml-[300px] space-y-8"
-      >
+      <div className="relative w-full sm:ml-[300px] space-y-8 md:flex md:flex-col lg:flex">
         <div className="flex justify-between border-2 px-4 items-center border-solid border-black">
           <h1 className="font-bold text-3xl capitalize py-3">my profile</h1>
           <img
@@ -39,12 +36,11 @@ export default function UserDetails() {
             alt={userDetail.name?.first}
           />
         </div>
-
-        <div className="flex gap-8">
+        <div className="flex flex-col space-y-6 sm:flex sm:gap-8 lg:flex-row sm:space-y-0">
           {/* user details */}
-          <div className="border-2 px-4 w-1/2  h-fit py-4 items-center border-solid border-white bg-white rounded-sm">
+          <div className="border-2 px-4 h-fit py-8 items-center border-solid border-white bg-white rounded-sm md:w-full lg:w-1/2">
             <h1 className="font-bold text-3xl capitalize py-3">user details</h1>
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-4 space-y-2 sm:space-y-0">
               <span className="flex items-center">
                 <p className="font-medium text-lg">User Id:</p>
                 <p className="bg-white text-lg px-2">
@@ -65,7 +61,7 @@ export default function UserDetails() {
               </span>
             </div>
 
-            <span className="flex flex-col space-y-2">
+            <span className="flex  flex-col space-y-2">
               <div className="flex flex-col">
                 <p className="font-medium text-lg">First Name</p>
                 <p className="bg-white text-lg border-black capitalize border-2 px-4 py-3 rounded border-solid">
@@ -80,9 +76,9 @@ export default function UserDetails() {
               </div>
             </span>
 
-            <span className="flex flex-col space-y-2">
+            <span className="flex flex-col space-y-2 ">
               <p className="font-medium text-lg">Email</p>
-              <p className="bg-white text-lg border-black border-2 px-4 py-3 rounded border-solid">
+              <p className="bg-white text-wrap text-sm border-black border-2 px-4 py-3 rounded border-solid">
                 {userDetail.email}
               </p>
             </span>
@@ -98,10 +94,10 @@ export default function UserDetails() {
                 {userDetail.cell}
               </p>
             </span>
-          </div>
-          <div className="w-1/2 space-y-8">
+          </div> 
+          <div className="space-y-6 sm:space-y-8 md:w-full lg:w-1/2">
             {/* residential address */}
-            <div className="border-2 px-4 py-3 items-center border-solid border-white bg-white rounded-sm">
+          <div className="border-2 px-4 h-fit py-8 items-center border-solid border-white bg-white rounded-sm sm:w-1/2 md:w-full">
               <h1 className="font-bold text-3xl capitalize py-3">Location</h1>
               <span className="flex flex-col space-y-2">
                 <p className="font-medium text-lg">Location</p>
@@ -115,7 +111,7 @@ export default function UserDetails() {
                   {userDetail.location?.street?.name}
                 </p>
               </span>
-              <div className="flex gap-4">
+              <div className="sm:gap-4">
                 <span className="flex flex-col space-y-2">
                   <p className="font-medium text-lg">City</p>
                   <p className="bg-white text-lg border-black border-2 px-4 py-3 rounded border-solid">
@@ -129,7 +125,7 @@ export default function UserDetails() {
                   </p>
                 </span>
               </div>
-              <div className="flex gap-4">
+              <div className="sm:gap-4">
                 <span className="flex flex-col space-y-2">
                   <p className="font-medium text-lg">Country</p>
                   <p className="bg-white text-lg border-black border-2 px-4 py-3 rounded border-solid">
@@ -146,12 +142,12 @@ export default function UserDetails() {
             </div>
 
             {/* KYC details */}
-            <div className="border-2 px-4 py-3 items-center border-solid border-white bg-white rounded-sm">
+              <div className="border-2 px-4 py-3 items-center border-solid border-white bg-white rounded-sm">
               <h1 className="font-bold text-3xl capitalize py-3">
                 KYC Details
               </h1>
 
-              <div className="flex gap-4">
+              <div className="sm:flex sm:gap-4">
                 <span className="flex items-center">
                   <p className="font-medium text-lg">DOB:</p>
                   <p className="bg-white text-lg px-2">
@@ -164,9 +160,9 @@ export default function UserDetails() {
                   <p className="bg-white text-lg px-2">{userDetail.dob?.age}</p>
                 </span>
               </div>
-              <div className="flex gap-4">
+              <div className="sm:flex sm:gap-4">
                 <span className="flex items-center">
-                  <p className="font-medium text-lg">DOP:</p>
+                  <p className="font-medium text-lg">Joined:</p>
                   <p className="bg-white text-lg px-2">
                     {userDetail.registered?.date.slice(0, -14)}
                   </p>
@@ -179,7 +175,7 @@ export default function UserDetails() {
                   </p>
                 </span>
               </div>
-            </div>
+            </div>  
           </div>
         </div>
       </div>

@@ -1,10 +1,10 @@
 import React from 'react'
-import profile from "../assets/icon/profile.svg";
+  import profile from "../assets/icon/profile.svg";
 
 const SideBar = ({userDetail}) => {
   return (
     <div className="fixed">
-      <div className="w-[270px] h-[100vh] bg-white border-solid rounded py-4 flex flex-col">
+      <div className="hidden sm:w-[270px] sm:h-[95vh] bg-white border-solid rounded py-4 sm:flex flex-col">
         <div className="mx-auto">
           <img
             className="rounded-full border-4 border-black border-solid h-[100px] w-[100px]"
